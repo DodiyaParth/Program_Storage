@@ -1,0 +1,46 @@
+$date
+	Mon Oct 15 16:00:08 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb3 $end
+$var wire 1 ! co $end
+$var wire 1 " sum $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$scope module A $end
+$var wire 1 % a $end
+$var wire 1 & b $end
+$var wire 1 ! co $end
+$var wire 1 " sum $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0&
+0%
+0$
+0#
+0"
+0!
+$end
+#1
+1"
+1#
+1%
+#3
+0"
+1!
+1$
+1&
+#6
+1"
+0!
+0#
+0%
+#10

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>players applied</title>
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body><font face="sans-serif">
+<strong><h1 align='center' >Gujarat Cricket Association</h1></strong>
+        <h5 align='center'>230/231, Akshar Arcade,Navrangpura, Ahmedabad, Gujarat 380009</h3>
+            <hr>
+
+            <h3>List of players applied for man cricket team</h3>
+
+            <table>
+                <tr>
+                    <th>name</th>
+                    <th>age</th>
+                    <th>mobile number</th>
+                    <th>email</th>
+                    <th>position</th>
+                    <th>experience</th>
+                </tr>
+                {% for i in m %}
+                <tr>
+                    <td>{{i.name}}</td>
+                    <td>{{i.age}}</td>
+                    <td>{{i.mobile_no}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.position}}</td>
+                    <td>{{i.experience}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+
+            <h3>List of players applied for woman cricket team</h3>
+              <table>
+                <tr>
+                    <th>name</th>
+                    <th>age</th>
+                    <th>mobile number</th>
+                    <th>email</th>
+                    <th>position</th>
+                    <th>experience</th>
+                </tr>
+                {% for i in f %}
+                <tr>
+                    <td>{{i.name}}</td>
+                    <td>{{i.age}}</td>
+                    <td>{{i.mobile_no}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.position}}</td>
+                    <td>{{i.experience}}</td>
+                </tr>
+                {% endfor %}
+            </table></font>
+</body>
+</html>

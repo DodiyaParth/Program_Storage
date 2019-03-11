@@ -1,0 +1,220 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_010D2A28 .scope module, "ALU_1bit_tb" "ALU_1bit_tb" 2 2;
+ .timescale 0 0;
+v01112768_0 .var "a", 0 0;
+v01112AD8_0 .var "aluop", 3 0;
+v01112138_0 .var "b", 0 0;
+v01112500_0 .var "cin", 0 0;
+v01112710_0 .net "cout", 0 0, L_011137A8; 1 drivers
+v01112348_0 .net "result", 0 0, L_01113840; 1 drivers
+S_010D2D58 .scope module, "a1" "alu_1bit" 2 7, 3 2, S_010D2A28;
+ .timescale 0 0;
+L_011131F8 .functor NOT 1, v01112768_0, C4<0>, C4<0>, C4<0>;
+L_011132D8 .functor NOT 1, L_01112818, C4<0>, C4<0>, C4<0>;
+L_01113230 .functor AND 1, v01112768_0, L_011132D8, C4<1>, C4<1>;
+L_01113268 .functor AND 1, L_011131F8, L_01112A28, C4<1>, C4<1>;
+L_01113508 .functor OR 1, L_01113230, L_01113268, C4<0>, C4<0>;
+L_011133B8 .functor NOT 1, v01112138_0, C4<0>, C4<0>, C4<0>;
+L_01113428 .functor NOT 1, L_01112558, C4<0>, C4<0>, C4<0>;
+L_01113540 .functor AND 1, v01112138_0, L_01113428, C4<1>, C4<1>;
+L_011131C0 .functor AND 1, L_011133B8, L_01112660, C4<1>, C4<1>;
+L_011135B0 .functor OR 1, L_01113540, L_011131C0, C4<0>, C4<0>;
+L_01113658 .functor AND 1, L_01113508, L_011135B0, C4<1>, C4<1>;
+L_011136C8 .functor OR 1, L_01113508, L_011135B0, C4<0>, C4<0>;
+L_01113770 .functor AND 1, L_010E6510, L_01113038, L_01113658, C4<1>;
+L_010E6510 .functor NOT 1, L_01112920, C4<0>, C4<0>, C4<0>;
+L_01113038 .functor NOT 1, L_01112978, C4<0>, C4<0>, C4<0>;
+L_01113958 .functor AND 1, L_01113BF8, L_011128C8, L_011136C8, C4<1>;
+L_01113BF8 .functor NOT 1, L_01112870, C4<0>, C4<0>, C4<0>;
+L_01113E28 .functor AND 1, L_01112030, L_01113AA8, L_011130E0, C4<1>;
+L_01113AA8 .functor NOT 1, L_01112088, C4<0>, C4<0>, C4<0>;
+L_01113840 .functor OR 1, L_01113770, L_01113958, L_01113E28, C4<0>;
+v010D38A8_0 .net *"_s1", 0 0, L_01112818; 1 drivers
+v010D42A0_0 .net *"_s10", 0 0, L_010E6510; 1 drivers
+v010D39B0_0 .net *"_s13", 0 0, L_01112978; 1 drivers
+v010D3E28_0 .net *"_s14", 0 0, L_01113038; 1 drivers
+v010D3AB8_0 .net *"_s17", 0 0, L_01112870; 1 drivers
+v010D3E80_0 .net *"_s18", 0 0, L_01113BF8; 1 drivers
+v010D40E8_0 .net *"_s21", 0 0, L_011128C8; 1 drivers
+v010D3ED8_0 .net *"_s23", 0 0, L_01112030; 1 drivers
+v010D3F30_0 .net *"_s25", 0 0, L_01112088; 1 drivers
+v010D4038_0 .net *"_s26", 0 0, L_01113AA8; 1 drivers
+v010D4140_0 .net *"_s3", 0 0, L_01112A28; 1 drivers
+v010D4718_0 .net *"_s5", 0 0, L_01112558; 1 drivers
+v010D4668_0 .net *"_s7", 0 0, L_01112660; 1 drivers
+v010D4508_0 .net *"_s9", 0 0, L_01112920; 1 drivers
+v010D4400_0 .net "a", 0 0, v01112768_0; 1 drivers
+v010D45B8_0 .net "ain", 0 0, L_011131F8; 1 drivers
+v010D43A8_0 .net "aluop", 3 0, v01112AD8_0; 1 drivers
+v010D4560_0 .net "aout", 0 0, L_01113508; 1 drivers
+v010D46C0_0 .net "b", 0 0, v01112138_0; 1 drivers
+v010D4458_0 .net "bin", 0 0, L_011133B8; 1 drivers
+v010D4610_0 .net "bout", 0 0, L_011135B0; 1 drivers
+v010D4770_0 .net "cin", 0 0, v01112500_0; 1 drivers
+v010D47C8_0 .alias "cout", 0 0, v01112710_0;
+v010D4820_0 .net "k1", 0 0, L_01113230; 1 drivers
+v010D44B0_0 .net "k2", 0 0, L_01113268; 1 drivers
+v01112A80_0 .net "l1", 0 0, L_01113540; 1 drivers
+v01112608_0 .net "l2", 0 0, L_011131C0; 1 drivers
+v011127C0_0 .net "r2in", 0 0, L_01113428; 1 drivers
+v011122F0_0 .net "r3in", 0 0, L_011132D8; 1 drivers
+v011121E8_0 .alias "result", 0 0, v01112348_0;
+v011129D0_0 .net "u1", 0 0, L_01113770; 1 drivers
+v01112240_0 .net "u2", 0 0, L_01113958; 1 drivers
+v01112298_0 .net "u3", 0 0, L_01113E28; 1 drivers
+v011126B8_0 .net "w1", 0 0, L_01113658; 1 drivers
+v011124A8_0 .net "w2", 0 0, L_011136C8; 1 drivers
+v011120E0_0 .net "w3", 0 0, L_011130E0; 1 drivers
+L_01112818 .part v01112AD8_0, 3, 1;
+L_01112A28 .part v01112AD8_0, 3, 1;
+L_01112558 .part v01112AD8_0, 2, 1;
+L_01112660 .part v01112AD8_0, 2, 1;
+L_01112920 .part v01112AD8_0, 1, 1;
+L_01112978 .part v01112AD8_0, 0, 1;
+L_01112870 .part v01112AD8_0, 1, 1;
+L_011128C8 .part v01112AD8_0, 0, 1;
+L_01112030 .part v01112AD8_0, 1, 1;
+L_01112088 .part v01112AD8_0, 0, 1;
+S_010D3440 .scope module, "q2" "fullAdder" 3 27, 4 2, S_010D2D58;
+ .timescale 0 0;
+L_011137A8 .functor OR 1, L_01113070, L_01113118, C4<0>, C4<0>;
+v010D3C18_0 .alias "c", 0 0, v01112710_0;
+v010D3B10_0 .net "c1", 0 0, L_01113070; 1 drivers
+v010D4248_0 .net "c2", 0 0, L_01113118; 1 drivers
+v010D42F8_0 .alias "cin", 0 0, v010D4770_0;
+v010D3FE0_0 .alias "op1", 0 0, v010D4560_0;
+v010D3958_0 .alias "op2", 0 0, v010D4610_0;
+v010D3CC8_0 .alias "s", 0 0, v011120E0_0;
+v010D4350_0 .net "s1", 0 0, L_01113690; 1 drivers
+S_010D35D8 .scope module, "ha1" "halfAdder" 4 6, 5 1, S_010D3440;
+ .timescale 0 0;
+L_01113690 .functor XOR 1, L_01113508, L_011135B0, C4<0>, C4<0>;
+L_01113070 .functor AND 1, L_01113508, L_011135B0, C4<1>, C4<1>;
+v010D3D20_0 .alias "a", 0 0, v010D4560_0;
+v010D3D78_0 .alias "b", 0 0, v010D4610_0;
+v010D3A60_0 .alias "c", 0 0, v010D3B10_0;
+v010D4198_0 .alias "s", 0 0, v010D4350_0;
+S_010D3550 .scope module, "ha2" "halfAdder" 4 7, 5 1, S_010D3440;
+ .timescale 0 0;
+L_011130E0 .functor XOR 1, v01112500_0, L_01113690, C4<0>, C4<0>;
+L_01113118 .functor AND 1, v01112500_0, L_01113690, C4<1>, C4<1>;
+v010D3B68_0 .alias "a", 0 0, v010D4770_0;
+v010D4090_0 .alias "b", 0 0, v010D4350_0;
+v010D3900_0 .alias "c", 0 0, v010D4248_0;
+v010D41F0_0 .alias "s", 0 0, v011120E0_0;
+    .scope S_010D2A28;
+T_0 ;
+    %vpi_call 2 11 "$monitor", "a=", v01112768_0, " b=", v01112138_0, " \011cin=", v01112500_0, " aluop=", v01112AD8_0, "   result=", v01112348_0, " cout=", v01112710_0;
+    %vpi_call 2 12 "$display", "AND operation";
+    %vpi_call 2 13 "$dumpfile", "ALU_1bit.vcd";
+    %vpi_call 2 14 "$dumpvars", 1'sb0, S_010D2A28;
+    %set/v v01112AD8_0, 0, 4;
+    %set/v v01112500_0, 0, 1;
+    %set/v v01112768_0, 0, 1;
+    %set/v v01112138_0, 0, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 0, 1;
+    %set/v v01112138_0, 1, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 1, 1;
+    %set/v v01112138_0, 0, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 1, 1;
+    %set/v v01112138_0, 1, 1;
+    %delay 5, 0;
+    %vpi_call 2 25 "$display", "OR operation";
+    %movi 8, 1, 4;
+    %set/v v01112AD8_0, 8, 4;
+    %set/v v01112500_0, 0, 1;
+    %set/v v01112768_0, 0, 1;
+    %set/v v01112138_0, 0, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 0, 1;
+    %set/v v01112138_0, 1, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 1, 1;
+    %set/v v01112138_0, 0, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 1, 1;
+    %set/v v01112138_0, 1, 1;
+    %delay 5, 0;
+    %vpi_call 2 36 "$display", "ADD operation";
+    %movi 8, 2, 4;
+    %set/v v01112AD8_0, 8, 4;
+    %set/v v01112500_0, 0, 1;
+    %set/v v01112768_0, 0, 1;
+    %set/v v01112138_0, 0, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 0, 1;
+    %set/v v01112138_0, 1, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 1, 1;
+    %set/v v01112138_0, 0, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 1, 1;
+    %set/v v01112138_0, 1, 1;
+    %delay 5, 0;
+    %vpi_call 2 47 "$display", "SUB operation";
+    %movi 8, 6, 4;
+    %set/v v01112AD8_0, 8, 4;
+    %set/v v01112500_0, 1, 1;
+    %set/v v01112768_0, 0, 1;
+    %set/v v01112138_0, 0, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 0, 1;
+    %set/v v01112138_0, 1, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 1, 1;
+    %set/v v01112138_0, 0, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 1, 1;
+    %set/v v01112138_0, 1, 1;
+    %delay 5, 0;
+    %vpi_call 2 58 "$display", "NAND operation";
+    %movi 8, 13, 4;
+    %set/v v01112AD8_0, 8, 4;
+    %set/v v01112500_0, 0, 1;
+    %set/v v01112768_0, 0, 1;
+    %set/v v01112138_0, 0, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 0, 1;
+    %set/v v01112138_0, 1, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 1, 1;
+    %set/v v01112138_0, 0, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 1, 1;
+    %set/v v01112138_0, 1, 1;
+    %delay 5, 0;
+    %vpi_call 2 69 "$display", "NOR operation";
+    %movi 8, 12, 4;
+    %set/v v01112AD8_0, 8, 4;
+    %set/v v01112500_0, 0, 1;
+    %set/v v01112768_0, 0, 1;
+    %set/v v01112138_0, 0, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 0, 1;
+    %set/v v01112138_0, 1, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 1, 1;
+    %set/v v01112138_0, 0, 1;
+    %delay 5, 0;
+    %set/v v01112768_0, 1, 1;
+    %set/v v01112138_0, 1, 1;
+    %delay 5, 0;
+    %vpi_call 2 80 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 6;
+    "N/A";
+    "<interactive>";
+    "ALU_1bit_tb.v";
+    "./ALU_1bit.v";
+    "./fullAdder.v";
+    "./halfAdder.v";

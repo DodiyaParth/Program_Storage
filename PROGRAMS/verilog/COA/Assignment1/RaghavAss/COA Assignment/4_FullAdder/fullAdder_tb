@@ -1,0 +1,88 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_012ACF50 .scope module, "fullAdder_tb" "fullAdder_tb" 2 2;
+ .timescale 0 0;
+v012AA2A8_0 .net "c", 0 0, L_012AA8D0; 1 drivers
+v012AA6C8_0 .var "cin", 0 0;
+v012AA148_0 .var "op1", 0 0;
+v012AA720_0 .var "op2", 0 0;
+v012AA460_0 .net "s", 0 0, L_012AA860; 1 drivers
+S_012AD748 .scope module, "fa" "fullAdder" 2 5, 3 2, S_012ACF50;
+ .timescale 0 0;
+L_012AA8D0 .functor OR 1, L_012ADE48, L_012AA978, C4<0>, C4<0>;
+v012A32D8_0 .alias "c", 0 0, v012AA2A8_0;
+v012AA358_0 .net "c1", 0 0, L_012ADE48; 1 drivers
+v012AA3B0_0 .net "c2", 0 0, L_012AA978; 1 drivers
+v012AA408_0 .net "cin", 0 0, v012AA6C8_0; 1 drivers
+v012AA1F8_0 .net "op1", 0 0, v012AA148_0; 1 drivers
+v012AA250_0 .net "op2", 0 0, v012AA720_0; 1 drivers
+v012A9FE8_0 .alias "s", 0 0, v012AA460_0;
+v012AA670_0 .net "s1", 0 0, L_012ADE10; 1 drivers
+S_012ADB88 .scope module, "ha1" "halfAdder" 3 6, 4 1, S_012AD748;
+ .timescale 0 0;
+L_012ADE10 .functor XOR 1, v012AA148_0, v012AA720_0, C4<0>, C4<0>;
+L_012ADE48 .functor AND 1, v012AA148_0, v012AA720_0, C4<1>, C4<1>;
+v012A3AB8_0 .alias "a", 0 0, v012AA1F8_0;
+v012A3B10_0 .alias "b", 0 0, v012AA250_0;
+v012A3228_0 .alias "c", 0 0, v012AA358_0;
+v012A3280_0 .alias "s", 0 0, v012AA670_0;
+S_012AD280 .scope module, "ha2" "halfAdder" 3 7, 4 1, S_012AD748;
+ .timescale 0 0;
+L_012AA860 .functor XOR 1, v012AA6C8_0, L_012ADE10, C4<0>, C4<0>;
+L_012AA978 .functor AND 1, v012AA6C8_0, L_012ADE10, C4<1>, C4<1>;
+v012A4630_0 .alias "a", 0 0, v012AA408_0;
+v012A4688_0 .alias "b", 0 0, v012AA670_0;
+v012A46E0_0 .alias "c", 0 0, v012AA3B0_0;
+v012A3A60_0 .alias "s", 0 0, v012AA460_0;
+    .scope S_012ACF50;
+T_0 ;
+    %vpi_call 2 8 "$dumpfile", "fullAdderAdder.vcd";
+    %vpi_call 2 9 "$dumpvars", 1'sb0, S_012ACF50;
+    %vpi_call 2 10 "$display", "op1 op2 cin    sum carry";
+    %vpi_call 2 11 "$monitor", v012AA148_0, "   ", v012AA720_0, "   ", v012AA6C8_0, "      ", v012AA460_0, "    ", v012AA2A8_0;
+    %set/v v012AA148_0, 0, 1;
+    %set/v v012AA720_0, 0, 1;
+    %set/v v012AA6C8_0, 0, 1;
+    %delay 10, 0;
+    %set/v v012AA148_0, 0, 1;
+    %set/v v012AA720_0, 0, 1;
+    %set/v v012AA6C8_0, 1, 1;
+    %delay 10, 0;
+    %set/v v012AA148_0, 0, 1;
+    %set/v v012AA720_0, 1, 1;
+    %set/v v012AA6C8_0, 0, 1;
+    %delay 10, 0;
+    %set/v v012AA148_0, 0, 1;
+    %set/v v012AA720_0, 1, 1;
+    %set/v v012AA6C8_0, 1, 1;
+    %delay 10, 0;
+    %set/v v012AA148_0, 1, 1;
+    %set/v v012AA720_0, 0, 1;
+    %set/v v012AA6C8_0, 0, 1;
+    %delay 10, 0;
+    %set/v v012AA148_0, 1, 1;
+    %set/v v012AA720_0, 0, 1;
+    %set/v v012AA6C8_0, 1, 1;
+    %delay 10, 0;
+    %set/v v012AA148_0, 1, 1;
+    %set/v v012AA720_0, 1, 1;
+    %set/v v012AA6C8_0, 0, 1;
+    %delay 10, 0;
+    %set/v v012AA148_0, 1, 1;
+    %set/v v012AA720_0, 1, 1;
+    %set/v v012AA6C8_0, 1, 1;
+    %delay 10, 0;
+    %vpi_call 2 52 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "fullAdder_tb.v";
+    "./fullAdder.v";
+    "./halfAdder.v";

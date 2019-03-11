@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Player registration form</title>
+    </head>
+    <body><font face="sans-serif">
+        <strong>
+        <h1 align='center' >Gujarat Cricket Association</h1>
+        </strong>
+        <h5 align='center'>230/231, Akshar Arcade,Navrangpura, Ahmedabad, Gujarat 380009</h3>
+        <hr>
+        <h2 align='center'>Player Registration form</h3>
+        <form method="post" action="response/">
+            {% csrf_token %}
+            Name:  <input type="text" name="name" width="20" value="" required><br><br>
+            Male  <input type="radio" name="gender" value="Male" required>
+            Female  <input type="radio" name="gender" value="Female" required><br><br>
+            Age:  <input type="number" name="age" required><br><br>
+            Mobile No:  <input type="number" name="mobile" max="9999999999" required><br><br>
+            Email id:  <input type="email" name="email" required><br><br>
+            Describe your position in team.<br><input type="text" name="position" size="40" placeholder="left hand allrounder, wicket keeper etc." required><br><br>
+            Tell us about your experience.<br>
+            <textarea type="text" size="50" name="experience" size="50" required></textarea><br><br>
+            <input type="submit">
+        </form><br><br><hr></h2></h5></font>
+    </body>
+</html>

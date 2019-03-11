@@ -1,0 +1,51 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x111e730 .scope module, "tb3" "tb3" 2 3;
+ .timescale 0 0;
+v0x1163ef0_0 .var "a", 0 0;
+v0x1163f90_0 .var "b", 0 0;
+v0x1164010_0 .net "co", 0 0, L_0x1164170; 1 drivers
+v0x1164090_0 .net "sum", 0 0, L_0x1164260; 1 drivers
+S_0x111e820 .scope module, "A" "half_add" 2 9, 3 1, S_0x111e730;
+ .timescale 0 0;
+v0x1132240_0 .net *"_s10", 0 0, C4<0>; 1 drivers
+v0x1163950_0 .net *"_s11", 1 0, L_0x11646a0; 1 drivers
+v0x11639f0_0 .net *"_s3", 1 0, L_0x11643a0; 1 drivers
+v0x1163a90_0 .net *"_s6", 0 0, C4<0>; 1 drivers
+v0x1163b40_0 .net *"_s7", 1 0, L_0x1164520; 1 drivers
+v0x1163be0_0 .net "a", 0 0, v0x1163ef0_0; 1 drivers
+v0x1163cc0_0 .net "b", 0 0, v0x1163f90_0; 1 drivers
+v0x1163d60_0 .alias "co", 0 0, v0x1164010_0;
+v0x1163e50_0 .alias "sum", 0 0, v0x1164090_0;
+L_0x1164170 .part L_0x11646a0, 1, 1;
+L_0x1164260 .part L_0x11646a0, 0, 1;
+L_0x11643a0 .concat [ 1 1 0 0], v0x1163ef0_0, C4<0>;
+L_0x1164520 .concat [ 1 1 0 0], v0x1163f90_0, C4<0>;
+L_0x11646a0 .arith/sum 2, L_0x11643a0, L_0x1164520;
+    .scope S_0x111e730;
+T_0 ;
+    %set/v v0x1163ef0_0, 0, 1;
+    %set/v v0x1163f90_0, 0, 1;
+    %vpi_call 2 15 "$dumpfile", "prog3.vcd";
+    %vpi_call 2 16 "$dumpvars", 1'sb0, S_0x111e730;
+    %vpi_call 2 17 "$monitor", "A=%b B=%b S=%b C=%b", v0x1163ef0_0, v0x1163f90_0, v0x1164090_0, v0x1164010_0;
+    %delay 1, 0;
+    %set/v v0x1163ef0_0, 1, 1;
+    %delay 2, 0;
+    %set/v v0x1163f90_0, 1, 1;
+    %delay 3, 0;
+    %set/v v0x1163ef0_0, 0, 1;
+    %delay 4, 0;
+    %vpi_call 2 24 "$finish";
+    %jmp T_0;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb3.v";
+    "./prog3.v";

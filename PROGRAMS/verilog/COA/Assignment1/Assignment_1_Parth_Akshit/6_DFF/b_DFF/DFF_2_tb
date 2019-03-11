@@ -1,0 +1,62 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_00884630 .scope module, "DFF_2_tb" "DFF_2_tb" 2 2;
+ .timescale 0 0;
+v011014A0_0 .var "clk", 0 0;
+v01101448_0 .var "d", 0 0;
+v011017B8_0 .net "q", 0 0, L_01101BB8; 1 drivers
+S_008846B8 .scope module, "dff" "DFF_2" 2 5, 3 1, S_00884630;
+ .timescale 0 0;
+L_00884740 .functor NAND 1, L_011019C0, L_01101B10, C4<1>, C4<1>;
+L_011019C0 .functor NAND 1, v011014A0_0, L_00884740, C4<1>, C4<1>;
+L_01101AA0 .functor NAND 1, v011014A0_0, L_011019C0, L_01101B10, C4<1>;
+L_01101B10 .functor NAND 1, v01101448_0, L_01101AA0, C4<1>, C4<1>;
+L_01101BB8 .functor NAND 1, L_011019C0, L_0088D9D0, C4<1>, C4<1>;
+L_0088D9D0 .functor NAND 1, L_01101BB8, L_01101AA0, C4<1>, C4<1>;
+v010E3480_0 .net "clk", 0 0, v011014A0_0; 1 drivers
+v00883500_0 .net "d", 0 0, v01101448_0; 1 drivers
+v00883558_0 .alias "q", 0 0, v011017B8_0;
+v008835B0_0 .net "w1", 0 0, L_011019C0; 1 drivers
+v00883608_0 .net "w2", 0 0, L_01101AA0; 1 drivers
+v01101290_0 .net "w3", 0 0, L_01101B10; 1 drivers
+v01101398_0 .net "w4", 0 0, L_00884740; 1 drivers
+v011013F0_0 .net "w5", 0 0, L_0088D9D0; 1 drivers
+    .scope S_00884630;
+T_0 ;
+    %set/v v011014A0_0, 0, 1;
+T_0.0 ;
+    %delay 10, 0;
+    %load/v 8, v011014A0_0, 1;
+    %inv 8, 1;
+    %set/v v011014A0_0, 8, 1;
+    %jmp T_0.0;
+    %end;
+    .thread T_0;
+    .scope S_00884630;
+T_1 ;
+    %delay 5, 0;
+    %set/v v01101448_0, 0, 1;
+T_1.0 ;
+    %delay 20, 0;
+    %load/v 8, v01101448_0, 1;
+    %inv 8, 1;
+    %set/v v01101448_0, 8, 1;
+    %jmp T_1.0;
+    %end;
+    .thread T_1;
+    .scope S_00884630;
+T_2 ;
+    %vpi_call 2 20 "$dumpfile", "DFF_2.vcd";
+    %vpi_call 2 21 "$dumpvars", 1'sb0, S_00884630;
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "DFF_2_tb.v";
+    "./DFF_2.v";

@@ -1,0 +1,51 @@
+$date
+	Mon Oct 15 22:05:54 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module dffbehavorial_tb $end
+$var wire 1 ! op $end
+$var reg 1 " clock $end
+$var reg 1 # ip $end
+$var reg 1 $ reset $end
+$scope module dd $end
+$var wire 1 " clk $end
+$var wire 1 # ip $end
+$var wire 1 $ reset $end
+$var reg 1 % op $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0%
+0$
+0#
+0"
+0!
+$end
+#5
+x!
+1%
+1#
+1"
+#10
+0"
+#15
+0!
+0%
+1$
+1"
+#20
+0$
+0#
+0"
+#25
+x!
+1%
+1#
+1"

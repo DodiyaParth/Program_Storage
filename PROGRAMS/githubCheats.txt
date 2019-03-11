@@ -1,0 +1,8 @@
+git init
+git add --all
+git add <filename>
+git status
+git commit -m "message"
+git diff <filename>
+git log
+git show head

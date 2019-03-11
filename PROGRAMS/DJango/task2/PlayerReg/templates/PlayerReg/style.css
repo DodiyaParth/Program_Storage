@@ -1,0 +1,12 @@
+.top{
+    padding-top:10px;
+    background:#dfd;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+    border-top: 3px double #1C6EA4;
+}
+
+body{
+    background:#ded;
+}
+
